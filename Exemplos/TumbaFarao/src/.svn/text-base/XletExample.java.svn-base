@@ -1,0 +1,45 @@
+import java.io.IOException;
+
+import javax.microedition.xlet.Xlet;
+import javax.microedition.xlet.XletContext;
+import javax.microedition.xlet.XletStateChangeException;
+
+import com.sun.dtv.lwuit.Button;
+import com.sun.dtv.lwuit.Form;
+import com.sun.dtv.lwuit.Image;
+import com.sun.dtv.lwuit.layouts.CoordinateLayout;
+
+
+public class XletExample implements Xlet {
+
+	public void initXlet(XletContext context) throws XletStateChangeException{
+	// TODO Auto-generated method stub 
+	}
+
+	public void startXlet() throws XletStateChangeException{
+	// TODO Auto-generated method stub
+		
+		Form firstForm = new Form();
+		firstForm.setLayout(new CoordinateLayout(1280, 720));
+		Image imagem = null;
+		
+		try {
+			imagem = Image.createImage("bt_amarelo.png");
+		} catch (IOException e) {			
+			e.printStackTrace();
+		}
+		
+		Button button = new Button("Clique aqui.", imagem);
+		firstForm.addComponent(button);
+		firstForm.show();		
+	}
+
+	public void pauseXlet(){
+	// TODO Auto-generated method stub 
+	}
+
+	public void destroyXlet(boolean unconditional) throws XletStateChangeException{
+	// TODO Auto-generated method stub 
+	}
+
+}
